@@ -1,0 +1,68 @@
+<resources>
+    <string name="app_name">BaseAndroid01</string>
+    <string name="hello">Hello World!</string>
+    <string name="back_button">Go Back</string>
+    <string name="CompanyModelListActivity" />
+
+    <string name="action_settings">Settings</string>
+    <string name="send_company_model_button">Send BusStop</string>
+    <string name="send_company_model_back_button">Send BusStop Back</string>
+    <string name="pick_company_model_button">Pick BusStop</string>
+    <string name="cancelled_operation">Cancelled result</string>
+    <string name="custom_operation">Custom result</string>
+
+    <!-- Main menu options-->
+    <string name="action_nearest_company_model">Nearest Bus Stop</string>
+    <string name="action_search_company_model">Search Bus Stop</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- Bus Stop List Fragment-->
+    <string name="fragment_company_model_list_title">Nearest Bus Stop</string>
+    <string name="action_map">Map</string>
+    <string name="no_company_model_message">No Bus Stop Nearby</string>
+
+    <!-- Bus Stop Search Fragment-->
+    <string name="fragment_company_model_search_title">Search</string>
+
+    <!-- Bus Stop Favourite Fragment-->
+    <string name="action_favourite">Favourite Bus Stop</string>
+
+    <string name="other_settings">Other Settings</string>
+    <string name="show_settings_title">Show settings document</string>
+
+    <!-- Search labels-->
+    <string name="action_favourite2">Favourite Bus Stop</string>
+
+    <!-- Permission-->
+    <string name="no_location_permission_title">Permission Warning!</string>
+    <string name="no_location_permission_message">The Location permission is mandatory for the usage of this application.</string>
+    <string name="permission_reason_title">Location permission</string>
+    <string name="permission_reason_message">We need this permission to locate BusStop nearby.</string>
+
+    <!-- Location-->
+    <string name="no_info">--</string>
+    <string name="loading_message">Loading&#8230;</string>
+    <string name="no_location_available">Location not available!</string>
+    <string name="my_location_geocoder_header">Geocoding</string>
+    <string name="my_location_geocoder_not_available">Geocoder service not available</string>
+    <string name="my_location_geo_coding_not_available">Geocoding not available!</string>
+
+    <!-- Map-->
+    <string name="company_model_map">Bus Stop Map</string>
+
+    <!-- Preferences -->
+    <string name="preferences_map_type_title">Map Type</string>
+    <string name="preferences_map_type_summary">Select the type of the Map</string>
+    <string name="preferences_map_type_hybrid">HYBRID</string>
+    <string name="preferences_map_type_normal">NORMAL</string>
+    <string name="preferences_map_type_satellite">SATELLITE</string>
+    <string name="preferences_map_type_terrain">TERRAIN</string>
+
+    <!-- Info Window -->
+    <string name="info_window_location">[%1$s,%2$s]</string>
+    <string name="info_window_country">%1$s - %2$s</string>
+
+    <!-- Street View -->
+    <string name="action_street_view">Street View</string>
+</resources>

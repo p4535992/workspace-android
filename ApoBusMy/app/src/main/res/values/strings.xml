@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">ApoBus</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_splash">SplashActivity</string>
+
+
+    <string name="send_bus_stop_button">Send BusStop</string>
+    <string name="send_bus_stop_back_button">Send BusStop Back</string>
+    <string name="pick_bus_stop_button">Pick BusStop</string>
+    <string name="cancelled_operation">Cancelled result</string>
+    <string name="custom_operation">Custom result</string>
+</resources>

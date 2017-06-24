@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ApoBus</string>
+    <string name="hello_world">Ciao Mondo!</string>
+    <string name="action_settings">Impostazioni</string>
+</resources>

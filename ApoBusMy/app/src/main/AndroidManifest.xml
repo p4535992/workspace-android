@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest
+    package="com.example.tenti.apobusmy"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme">
+        <activity android:name="com.example.tenti.apobusmy.MainActivity"/>
+        <activity android:name="com.example.tenti.apobusmy.BusStopActivity"/>
+        <!-- activity
+            android:stopId=".LifecycleMainActivity"
+            android:theme="@style/Theme.AppCompat.Light.Dialog"/ -->
+        <!-- activity android:stopId=".LifecycleMainActivity" android:process=":other_process"/-->
+        <!-- activity android:stopId=".LifecycleMainActivity"/-->
+        <activity
+            android:name="com.example.tenti.apobusmy.TouchSplashActivity"
+            android:label="@string/app_name"
+            android:theme="@style/FullScreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="com.example.tenti.apobusmy.BusStopListActivity">
+            <intent-filter>
+                <action android:name="com.example.tenti.apobusmy.action.PICK_BUS_STOP_ACTION"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

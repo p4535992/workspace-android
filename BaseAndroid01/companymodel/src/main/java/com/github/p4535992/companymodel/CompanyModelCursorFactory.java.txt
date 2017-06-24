@@ -1,0 +1,142 @@
+package com.github.p4535992.companymodel;
+
+import android.database.Cursor;
+import android.database.sqlite.SQLiteCursor;
+import android.database.sqlite.SQLiteCursorDriver;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteQuery;
+
+/**
+ * This is the class which creates the implementation for the Cursor
+ */
+public class CompanyModelCursorFactory implements SQLiteDatabase.CursorFactory {
+
+    public CompanyModelCursorFactory(){}
+    //if for some reason need to use the class SQLiteOpenHelper
+    /*
+     private final Context mContext;
+
+    public CompanyModelCursorFactory(Context context) {
+        super(context, AppDatabase.DB_NAME, new CompanyModelCursorFactory(),  AppDatabase.DB_VERSION);
+        mContext = context;
+    }
+
+    @Override
+    public void onCreate(SQLiteDatabase db) {
+        try {
+            db.beginTransaction();
+            final String createSQL = "<SQL TO CREATE TABLE>";
+            db.execSQL(createSQL);
+            db.setTransactionSuccessful();
+        } catch (Exception ioe) {
+            //Log.e(TAG, "Error reading create SQL", ioe);
+        } finally {
+            db.endTransaction();
+        }
+    }
+
+    @Override
+    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+        try {
+            db.beginTransaction();
+            final String dropSQL = "<SQL DROP TABLE>";
+            db.execSQL(dropSQL);
+            db.setTransactionSuccessful();
+        } catch (Exception ioe) {
+            //Log.e(TAG, "Error reading create SQL", ioe);
+        } finally {
+            db.endTransaction();
+        }
+        onCreate(db);
+    }
+   */
+
+  /**
+   * This is the class that implements the Cursor for the BusStop table
+   */
+  public static class CompanyModelCursor extends SQLiteCursor {
+
+    /**
+     * Index for stopId column
+     */
+    private static int sIdIndex = -1;
+    /**
+     * Index for name column
+     */
+    private static int sNameIndex;
+    /**
+     * Index for address column
+     */
+    private static int sAddressIndex;
+    /**
+     * Index for locationid column
+     */
+    private static int sLocationIdIndex;
+
+    /**
+     * The constructor for the CompanyModelCursor
+     *
+     * @param driver    The Driver reference
+     * @param editTable The name for the table
+     * @param query     Encapsulate information about the executed query
+     */
+    private CompanyModelCursor(SQLiteCursorDriver driver, String editTable, SQLiteQuery query) {
+      super(driver, editTable, query);
+      // We read the information we need for reading data from the cursor
+      if (sIdIndex == -1) {
+        // It means we have to initialize indexes
+        sIdIndex = getColumnIndex(AppDatabase.CompanyModelsTable.ID);
+        sNameIndex = getColumnIndex(AppDatabase.CompanyModelsTable.NAME);
+        sAddressIndex = getColumnIndex(AppDatabase.CompanyModelsTable.ADDRESS);
+        sLocationIdIndex = getColumnIndex(AppDatabase.CompanyModelsTable.LOCATIONID);
+      }
+    }
+
+    /**
+     * @return The current Id
+     */
+    public int getId() {
+      return getInt(sIdIndex);
+    }
+
+    /**
+     * @return The current name
+     */
+    public String getName() {
+      return getString(sNameIndex);
+    }
+
+    /**
+     * @return The current direction
+     */
+    public String getAddress() {
+      return getString(sAddressIndex);
+    }
+
+    /**
+     * @return The current indicator
+     */
+    public int getLocationId() {
+      return getInt(sLocationIdIndex);
+    }
+
+    /**
+     * @return The current item as CompanyModel
+     */
+    public CompanyModel getCompanyModel() {
+      return CompanyModel.Builder.create().withId(getId()).withName(getName())
+              .withAddress(getAddress()).withLocationId(getLocationId()).build();
+    }
+
+  }
+
+  @Override
+  public Cursor newCursor(SQLiteDatabase db, SQLiteCursorDriver masterQuery, String editTable, SQLiteQuery query) {
+    // Just create the CompanyModelCursor instance
+    if (AppDatabase.CompanyModelsTable.TABLE_NAME.equals(editTable)) {
+      return new CompanyModelCursor(masterQuery, editTable, query);
+    } else {
+      throw new IllegalArgumentException("The table" + editTable + " is not supported!");
+    }
+  }
+}

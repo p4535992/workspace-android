@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="dialog_fragment_styles">
+        <item>NORMAL</item>
+        <item>NO_TITLE</item>
+        <item>NO_FRAME</item>
+        <item>NO_INPUT</item>
+    </string-array>
+    <string-array name="dialog_fragment_themes">
+        <item>Theme_Holo</item>
+        <item>Theme_Holo_Light_Dialog</item>
+        <item>Theme_Holo_Light</item>
+        <item>Theme_Holo_Light_Panel</item>
+    </string-array>
+
+</resources>
